@@ -25,7 +25,9 @@ fun MapScreen(
     Scaffold(
         scaffoldState = scaffoldState,
         floatingActionButton = {
-            FloatingActionButton(onClick = { /*TODO*/ }) {
+            FloatingActionButton(onClick = {
+                viewModel.onEvent(MapEvent.ToggleFalloutMap)
+            }) {
                 Icon(imageVector = if (viewModel.state.isFallOutMap) {
                     Icons.Default.ToggleOff
                 }else Icons.Default.ToggleOn, contentDescription ="Toggle Fallout map")
